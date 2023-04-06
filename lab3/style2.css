@@ -1,0 +1,20 @@
+body { 
+    color: black;
+    background-image: url("../images/fon2.png");
+   }
+   p {
+    align: right;
+   }
+   h1 {
+    align: right;
+    color: red;
+    font-family: Arial;
+   }
+   h2 {
+    align: right;
+    color: red;
+    font-family: Arial;
+   }
+    em {
+    color: green;
+   }
