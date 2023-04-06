@@ -4,17 +4,27 @@ body {
    }
    p {
     align: right;
+    margin: 10px;
    }
    h1 {
     align: right;
     color: red;
     font-family: Arial;
+    margin: 10px;
+    font-family: "Roboto";
    }
    h2 {
     align: right;
     color: red;
     font-family: Arial;
+    margin: 10px;
+    font-family: "Roboto";
    }
     em {
     color: green;
+    border-bottom: double 3px;
+    padding: 5px;
+   }
+   strong {
+    font-family: "Caveat";
    }
