@@ -1,0 +1,15 @@
+body { 
+    color: white;
+    background-color: black;
+   }
+   p {
+    align: right;
+   }
+   h1 {
+    align: right;
+    color: red;
+    font-family: Arial;
+   }
+    em {
+    color: green;
+   }
