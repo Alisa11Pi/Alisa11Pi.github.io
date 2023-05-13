@@ -1,23 +1,87 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8">
-    <title>Стили</title>
-    <link rel="stylesheet" href="../lab3/style.css">
-    <style>
-    @media print {
-        body {color: #fff;
-        background-color: #000; }
-      }
-    </style>
+<meta charset="utf-8">
+<title>Главная страница</title>
+<link type="text/css" rel="stylesheet" href="css/main.css">
+<style>
+    ul {
+        list-style: none;
+    }
+    li:before {
+        left: 25px;
+        width: 4px;
+        content: url(pic/plus.gif);
+        height: 14px;
+        width: 15px;
+	}
+    li a {
+        color: #5578A1;
+    }
+    #container {
+        width: 800px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+    }
+    #header {
+        height: 80px;
+        background: #CCDDEE;
+    }
+    #outer {
+        height: 190px;
+    }
+    #left {
+        width: 200px;
+        height: 200px;
+        margin: 0px 10px 10px 0;
+        background: #E0EDCB;
+        float: left;
+    }
+    #right {
+        width: 200px;
+        height: 195px;
+        background: #E1E3F4;
+        float: right;
+        padding: 5px 0px 0px 10px;
+    }
+    #center {
+        margin: 11px 10px 0px 10px;
+    }
+    #footer {
+        margin-top: 15px;
+        width: 800px;
+        height: 100px;
+        background: #DDCCEE;}
+    .clearfix::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+</style>
 </head>
 <body>
-    <h1>Приватные и публичные программы</h1>
-    <hr>
-    <h2>Приватные программы</h2>
-    <p><em>Приватными программами</em> я называю те, которые будут использоваться только вами (их разработчиками) или очень ограниченным кругом других людей, чьи навыки, требования и компьютеры хорошо известны.</p>
-    <h2>Публичные программы</h2>
-    <p><em>Публичные программы</em> — прямая противоположность приватным. Они распространяются среди большого числа людей.</p>
-    <p><strong>Лу Гринзоу</strong></p>
+<div id="container">
+	<div id="header"></div>
+	<div id="outer" class="clearfix">
+		<div id="inner">
+			<div id="left">
+				<ul>
+					<li><a href="#">Камень</a></li>
+					<li><a href="#">Ножницы</a></li>
+					<li><a href="#">Бумага</a></li>
+				</ul>
+			</div>
+			<div id="right">right</div>
+			<div id="center">center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center</div>
+			<div id="end"></div>
+		</div>
+	</div>
+	<div id="footer"></div>
+</div>
 </body>
 </html>
