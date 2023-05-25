@@ -5,6 +5,18 @@
 <title>Главная страница</title>
 <link type="text/css" rel="stylesheet" href="css/main.css">
 <style>
+
+    html,
+    body {
+        height: 100%;
+    }  
+    .wrapper {
+		position: relative;
+		width: 800px;
+		min-height: 100%;
+		margin: 0 auto;
+		background: rgb(255, 255, 255);
+	}
     ul {
         list-style: none;
     }
@@ -19,13 +31,7 @@
         color: #5578A1;
     }
     #container {
-        width: 800px;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        margin: auto;
+        padding-bottom: 90px;
         
     }
     #header {
@@ -37,14 +43,14 @@
     }
     #left {
         width: 200px;
-        height: 200px;
+        height: 180px;
         margin: 0px 10px 10px 0;
         background: #E0EDCB;
         float: left;
     }
     #right {
         width: 200px;
-        height: 195px;
+        height: 180px;
         background: #E1E3F4;
         float: right;
         padding: 5px 0px 0px 10px;
@@ -52,12 +58,14 @@
     #center {
         margin: 11px 10px 0px 10px;
     }
+
     #footer {
-        margin-top: 15px;
+        position: absolute;
+		bottom: 0;
+		left: 0;
         width: 800px;
         height: 100px;
         background: #DDCCEE;
-        min-height: 100px;
     }
     .clearfix::after {
         content: "";
@@ -68,23 +76,27 @@
 </style>
 </head>
 <body>
-<div id="container">
-	<div id="header"></div>
-	<div id="outer" class="clearfix">
-		<div id="inner">
-			<div id="left">
-				<ul>
-					<li><a href="#">Камень</a></li>
-					<li><a href="#">Ножницы</a></li>
-					<li><a href="#">Бумага</a></li>
-				</ul>
-			</div>
-			<div id="right">right</div>
-			<div id="center">center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center</div>
-			<div id="end"></div>
-		</div>
-	</div>
-	<div id="footer"></div>
-</div>
-</body>
+
+    <div class="wrapper">
+    
+    <div id="container">
+        <div id="header"></div>
+        <div id="outer">
+            <div id="inner">
+                <div id="left">
+                    <ul>
+                        <li><a href="#">Камень</a></li>
+                        <li><a href="#">Ножницы</a></li>
+                        <li><a href="#">Бумага</a></li>
+                    </ul>
+                </div>
+                <div id="right">right</div>
+                <div id="center">center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center center</div>
+                <div id="end" class="clearfix"></div>
+            </div>
+        </div>
+        <div id="footer"> </div>
+    </div>
+    </div>
+    </body>
 </html>
