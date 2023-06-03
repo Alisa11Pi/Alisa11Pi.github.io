@@ -1,81 +1,62 @@
-'use strict';
+"use strict";
 
-        describe("pow", function () {
+function pow(x, n) {
+    /*return x**n;*/
+    if (n==0){ return 1
+    } else if (n>0){
+    for(let i=1; i<n; i++){
+        x*=x
+    }
+    return x
+    }else return 1 / pow(x, -n);
+}
 
-            it("pow(2, 2) => 4", function () {
-                assert.strictEqual(pow(2, 2), 4);
-            });
+function sumTo(n) {
+    if (n == 1) {
+        return 1;
+    } else {
+        return n + sumTo(n-1);
+    }
+}
 
-            it("pow(2, 0) => 1", function () {
-                assert.strictEqual(pow(2, 0), 1);
-            });
+function factorial(n) {
+    if (n === 0 || n === 1) {
+        return BigInt(1);
+    } else {
+        return BigInt(n) * factorial(n - 1);
+    }
+}
 
-            it("pow(2, -2) => 0.25", function () {
-                assert.strictEqual(pow(2, -2), 0.25);
-            });
+function fib(n) {
+    if (n === 0) {
+        return BigInt(0);
+    } else if (n === 1) {
+        return BigInt(1);
+    } else {
+        let a = BigInt(0);
+        let b = BigInt(1);
+        let c;
+        for (let i = 2; i <= n; i++) {
+            c = a + b;
+            a = b;
+            b = c;
+        }
+        return c;
+    }
+}
 
-        });
+function compare(x) {
+    return function(y) {
+        if(y > x) {
+            return true;
+        } else if(y < x) {
+            return false;
+        } else {
+            return null;
+        }
+    }
+}
 
-        describe("sumTo", function () {
-
-            it("sumTo(100) => 5050", function () {
-                assert.strictEqual(sumTo(100), 5050);
-            });
-
-        });
-
-        describe("factorial", function () {
-
-            it("factorial(0) => 1n", function () {
-                assert.strictEqual(factorial(0), 1n);
-            });
-
-            it("factorial(5) => 120n", function () {
-                assert.strictEqual(factorial(5), 120n);
-            });
-
-        });
-
-        describe("fib", function () {
-
-            it("fib(0) => 0n", function () {
-                assert.strictEqual(fib(0), 0n);
-            });
-
-            it("fib(100) => 354224848179261915075n", function () {
-                assert.strictEqual(fib(100), 354224848179261915075n);
-            });
-
-        });
-
-        describe("compare", function () {
-
-            it("compare(5)(4) => false", function () {
-                assert.isFalse(compare(5)(4));
-            });
-
-            it("compare(5)(5) => null", function () {
-                assert.isNull(compare(5)(5));
-            });
-
-            it("compare(5)(6) => true", function () {
-                assert.isTrue(compare(5)(6));
-            });
-
-        });
-
-        describe("sum", function () {
-
-            it("sum() => 0", function () {
-                assert.strictEqual(sum(), 0);
-            });
-
-            it("sum(1) => 1", function () {
-                assert.strictEqual(sum(1), 1);
-            });
-
-            it("sum(1, 2) => 3", function () {
-                assert.strictEqual(sum(1, 2), 3);
-            });
-
-        });
+function sum(...args) {
+    return args.reduce((total, current) => total + current, 0);
+}
