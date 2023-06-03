@@ -359,17 +359,15 @@
         </tbody>
     </table>
     <script>
-        /*for (let i = 0; i < 8; i++) {
-            document.write("<tr>");
-            for (let j = 0; j < 8; j++) {
-                if ((i + j) % 2 == 0) {
-                    document.write("<td style='background-color: #ffce9e'></td>");
-                } else {
-                    document.write("<td style='background-color: #d18b47'></td>");
-                }
+        let table = document.body.firstElementChild; /*ищет первый элемент-потомок узла <body> и сохраняет его в переменную table*/
+
+        for (let i = 1; i < table.rows.length - 1 ; i++) {/*проходит по всем строкам таблицы кроме первой и последней*/
+            let row = table.rows[i];
+            for (let j = 1; j < row.cells.length - 2; j += 2) {
+                row.cells[((i + 1) % 2) + j].style.backgroundColor = '#ffce9e';
+                row.cells[((i + 2) % 2) + j].style.backgroundColor = '#d18b47';
             }
-            document.write("</tr>");
-        }*/
+        }
     </script>
 </body>
 
