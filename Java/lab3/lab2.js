@@ -1,5 +1,10 @@
 "use strict";
-
+/**
+ * 
+ * @param {*} x 
+ * @param {*} n 
+ * @returns 
+ */
 function pow(x, n) {
     /*return x**n;*/
     if (n==0){ return 1
