@@ -361,7 +361,7 @@
     <script>
         let table = document.body.firstElementChild; /*ищет первый элемент-потомок узла <body> и сохраняет его в переменную table*/
 
-        for (let i = 1; i < table.rows.length - 1 ; i++) {/*проходит по всем строкам таблицы кроме первой и последней*/
+        for (let i = 1; i < table.rows.length - 1; i++) {/*проходит по всем строкам таблицы кроме первой и последней*/
             let row = table.rows[i];
             for (let j = 1; j < row.cells.length - 2; j += 2) {
                 row.cells[((i + 1) % 2) + j].style.backgroundColor = '#ffce9e';
