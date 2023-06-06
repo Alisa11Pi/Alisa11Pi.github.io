@@ -1,0 +1,79 @@
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+ <!---- <link type="text/css" rel="stylesheet" href="my.css">-->
+  <meta charset="utf-8">
+</head>
+
+<body>
+
+  <div contenteditable="true">Нажмите Ctrl+E, чтобы редактировать</div>
+
+  <script>
+'use strict';
+document.addEventListener("keydown", function(event){
+  if(event.ctrlKey && event.key === "e"){
+    event.preventDefault(); // отменяем стандартное поведение
+    let div = event.target;
+    let ta = document.createElement("textarea"); // создаем <textarea>
+    ta.value = div.innerHTML; // передаем содержимое <div> в <textarea>
+    div.replaceWith(ta); // заменяем <div> на <textarea>
+    
+   document.addEventListener("keydown", function(event1){
+      if(event1.ctrlKey && event1.key === "s"){
+        event1.preventDefault(); // отменяем стандартное поведение
+        let newDiv = document.createElement("div"); // создаем новый <div>
+        newDiv.innerHTML = ta.value; // передаем содержимое <textarea> в <div>
+        ta.replaceWith(newDiv); // заменяем <textarea> на <div>
+      }
+    });
+    
+
+    // обработчик события для отмены изменений при нажатии Esc
+    document.addEventListener("keydown", function(event2){
+      if(event2.key === "Escape"){
+        event2.preventDefault(); // отменяем стандартное поведение
+        div.innerHTML = ta.value; // возвращаем исходное содержимое в <div>
+        ta.replaceWith(div); // заменяем <textarea> на <div>
+      }
+    });
+  }
+
+});
+
+   /* let area = null;
+    let view = document.getElementById('view');
+
+    view.onclick = function() {
+      editStart();
+    };
+
+    function editStart() {
+      area = document.createElement('textarea');
+      area.className = 'edit';
+      area.value = view.innerHTML;
+
+      area.onkeydown = function(event) {
+        if (event.key == 'Enter') {
+          this.blur();
+        }
+      };
+
+      area.onblur = function() {
+        editEnd();
+      };
+
+      view.replaceWith(area);
+      area.focus();
+    }
+
+    function editEnd() {
+      view.innerHTML = area.value;
+      area.replaceWith(view);
+    }*/
+  </script>
+
+</body>
+</html>
