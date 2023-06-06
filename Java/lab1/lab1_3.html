@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-<meta charset="utf-8">
-<title>Число</title>
+  <meta charset="utf-8">
+  <title>Число</title>
 </head>
+
 <body>
-    <script>
-        let number;
+  <script>
+    let number;
 
-        do {
-          number = prompt("Введите число больше 100:", "");
-        } while (number <= 100 && number != null);
+    do {
+      number = prompt("Введите число больше 100:", "");
+    } while (number <= 100 && number != null);
 
-        if (number !== null) {
-          alert("Спасибо, вы ввели число больше 100: " + number);
-        } else {
-          alert("Вы отменили ввод.");
-        }
-    </script>
+    if (number !== null) {
+      alert("Спасибо, вы ввели число больше 100: " + number);
+    } else {
+      alert("Вы отменили ввод.");
+    }
+  </script>
 </body>
+
 </html>
