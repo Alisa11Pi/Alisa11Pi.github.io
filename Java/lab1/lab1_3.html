@@ -14,7 +14,7 @@
       number = prompt("Введите число больше 100:", "");
     } while (number <= 100 && number != null);
 
-    if (typeof number == "string"){
+    if (Number(number) != number){
       alert("Вы ввели не число");
     } else if (number !== null) {
       alert("Спасибо, вы ввели число больше 100: " + number);
